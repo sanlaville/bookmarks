@@ -21,3 +21,10 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: release unsigned apk
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
+        retention-days: 1
